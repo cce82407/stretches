@@ -4,8 +4,8 @@
   "description": "Practice JS with TDD",
   "private": true,
   "scripts": {
-    "test": "./node_modules/.bin/jest",
-    "test:watch": "./node_modules/.bin/jest --watchAll"
+    "test": "jest",
+    "test:watch": "jest --watchAll"
   },
   "repository": {
     "type": "git",
@@ -19,5 +19,15 @@
   "license": "ISC",
   "devDependencies": {
     "jest": "^24.9.0"
+  },
+  "bugs": {
+    "url": "https://github.com/russellwmoore/1909-stretches/issues"
+  },
+  "homepage": "https://github.com/russellwmoore/1909-stretches#readme",
+  "main": "jest.config.js",
+  "keywords": [],
+  "author": "",
+  "dependencies": {
+    "node": "^14.4.0"
   }
 }

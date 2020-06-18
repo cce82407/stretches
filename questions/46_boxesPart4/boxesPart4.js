@@ -29,7 +29,23 @@ class Box {
   movingVan(dur) {
     return setTimeout(() => this.unpack(), dur);
   }
-  //*****YOUR CODE STARTS HERE******
+  expand(num,boxArr){
+    this.capacity = this.capacity + num
+    for (let i = 0; i < boxArr.length; i++){
+     
+      this.pack(boxArr[i][0], boxArr[i][1])
+    }
+  }
+  loot(boxLocation){
+    if (boxLocation > this.contents.length){
+      const randomNum = Math.floor(Math.random()*this.contents.length)
+      console.log(randomNum)
+
+      return this.contents[randomNum]
+    }
+    else return this.contents[boxLocation]
+
+  }
 }
 
 module.exports = { Box };
