@@ -17,7 +17,20 @@
 // result = "csps123"
 
 const encryptString = (str, shift) => {
+  charStr = []
+  for (let i = 0; i < str.length; i++){
+    if(typeof str[i] !== 'string'){
+      throw Error
+    }
+    charStr.push(str.charCodeAt(i)+shift) 
+  }
+  let shiftedStr = ''
+  for(let i = 0; i < charStr.length; i++){
+    shiftedStr += String.fromCharCode(charStr[i])
+  
   // YOUR CODE
-};
+};console.log(shiftedStr)
+return(shiftedStr)
+}
 
 module.exports = { encryptString };
