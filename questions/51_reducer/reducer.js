@@ -19,7 +19,19 @@ const initialState = [
 const reducer = (state = initialState, action) => {
   //ADD YOUR CODE HERE
   switch (action.type) {
-    default:
+    case types.ADD_TODO:
+      return {
+        ...state, item: text.value, completed: completed.value, id: id.value
+      }
+    case types.DELETE_TODO:
+      return {
+        ...state
+      }
+    case types.COMPLETE_TODO:
+      return {
+        ...state
+      }
+    default: return state
       return;
   }
 };
