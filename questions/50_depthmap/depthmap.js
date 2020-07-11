@@ -6,17 +6,23 @@ const recordDepth = (obj) => {
   if (typeof obj !== 'object'){
     throw Error
   }
-  if (obj.depth){
-    return obj
-  }
-  let level = 0
-  for (let key in obj){
-    if (typeof obj[key] === 'object'){
-      obj.depth = level
-      level++
-      recordDepth(obj[key])
+
+
+  const innerObj = (newObj, count = 0) => {
+    for( let key in newObj ){
+      newObj.depth = count
+      if (typeof newObj[key] === 'object'){
+        count ++
+        innerObj(newObj[key], count)
+        count--
+      }
+    
     }
+    return newObj
+
   }
+  console.log(innerObj(obj))
+ return innerObj(obj)
   //write code here
 };
 

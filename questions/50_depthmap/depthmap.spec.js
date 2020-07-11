@@ -17,17 +17,7 @@ describe('recordDepth functionality', () => {
       },
     };
     expect(recordDepth(Tutankhamun)).toEqual({
-      stairs: {
-        passage: {
-          antechamber: {
-            annex: '4x4feet',
-            burialchamber: { treasury: '5x5feet', depth: 4 },
-            depth: 3,
-          },
-          depth: 2,
-        },
-        depth: 1,
-      },
+      stairs: { passage: {  antechamber: { annex: '4x4feet', burialchamber: { treasury: '5x5feet', depth: 4 }, depth: 3,},depth: 2, }, depth: 1, },
       depth: 0,
     });
   });

@@ -16,9 +16,42 @@
 //       "l2": [82, 34, 6, 19]
 //   }
 // }
-//getrootvalue(object,40)=>'one'
-//returns -1 if value isn't found
+// getrootvalue(object,40)=>'one'
+// returns -1 if value isn't found
 
-const getrootvalue = () => {};
 
+// const getrootvalue = (valuesObj, val) => {
+
+//     rootValue = Object.keys(valuesObj)[0]
+//     const getRootHelper = (obj) => {
+//       for (let key in obj){
+//         if ( typeof obj[key] === 'object'){
+//           getRootHelper(obj[key])
+//         }
+//         if (obj.includes(val)){
+//             return rootValue
+//           }
+//         } return null
+//       }
+//       getRootHelper (valuesObj)
+//     }
+//   }
+  
+
+const getrootvalue = (obj, val) => {
+  for (let key in obj){
+    const value = obj[key]
+    if(Array.isArray(value)){
+      if(value.includes(val)){
+        return key
+      }
+    }
+    else{
+      if(getrootvalue(value, val)){
+        return key
+      }
+    }
+  }
+  return null
+}
 module.exports = { getrootvalue };
