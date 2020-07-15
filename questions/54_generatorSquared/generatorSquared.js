@@ -4,4 +4,12 @@
 
 //write your function here
 
+function* squaredGen(i) {
+  yield i;
+  yield i + 10;
+}
+
+console.log(squaredGen(10));
+console.log(squaredGen.next().value);
+
 module.exports = { sqauredGen };
